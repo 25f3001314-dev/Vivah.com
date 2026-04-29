@@ -461,7 +461,7 @@ def naam_se_kundli_milan(naam1: str, naam2: str, boy_birth: dict | None = None, 
     total = round(total, 1)
 
     if total >= 32:
-        result = "उत्तम (बहुत अच्छा) — विवाह शुभ है 🟢"
+        result = "उत्तम (बहुत अच्छा) — विवाह शुभ है         https://vivah-com.vercel.app🟢"
     elif total >= 24:
         result = "मध्यम (अच्छा) — विवाह हो सकता है "
     elif total >= 18:
