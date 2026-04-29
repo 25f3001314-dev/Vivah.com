@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kundli Milan — Vivah</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main class="card">
+    <h1>नाम से कुंडली मिलान</h1>
+    <p class="subtitle">नाम डालकर जल्दी मिलान करें. सटीक परिणाम के लिए जन्म विवरण खोलें.</p>
+    <form id="milanForm" onsubmit="return false;">
+      <label>लड़के का नाम
+        <input id="boy" name="boy" placeholder="राहुल" autofocus>
+      </label>
+      <label>लड़की का नाम
+        <input id="girl" name="girl" placeholder="प्रिया">
+      </label>
+
+      <details class="advanced">
+        <summary>जन्म विवरण (library-based)</summary>
+        <div class="advanced-grid">
+          <div class="mini-card">
+            <h2>लड़का</h2>
+            <label>जन्म तिथि
+              <input id="boyDate" type="date">
+            </label>
+            <label>जन्म समय
+              <input id="boyTime" type="time" step="60">
+            </label>
+          </div>
+          <div class="mini-card">
+            <h2>लड़की</h2>
+            <label>जन्म तिथि
+              <input id="girlDate" type="date">
+            </label>
+            <label>जन्म समय
+              <input id="girlTime" type="time" step="60">
+            </label>
+          </div>
+        </div>
+      </details>
+
+      <button id="checkBtn" class="btn">मिलान करें</button>
+    </form>
+
+    <section id="result" class="hidden">
+      <div class="summary">
+        <div><strong>अंक:</strong> <span id="score"></span></div>
+        <div><strong>प्रतिशत:</strong> <span id="percent"></span></div>
+        <div id="outcome"></div>
+      </div>
+
+      <table id="kootTable">
+        <thead>
+          <tr><th>कूट</th><th>अंक</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <div id="doshas" class="doshas"></div>
+    </section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
