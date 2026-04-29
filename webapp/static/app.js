@@ -63,8 +63,45 @@ function showResult(data){
   document.getElementById('percent').textContent = data.percentage || '';
   document.getElementById('outcome').textContent = data.result || '';
 
-  const asht = data.ashtakoot || {};
-  for (const [k,v] of Object.entries(asht)){
+  // Display profile information
+  const boyInfo = data.boy || {};
+  const girlInfo = data.girl || {};
+  
+  // Remove existing profiles div if any
+  let profileDiv = document.querySelector('.profiles');
+  if (profileDiv) profileDiv.remove();
+  
+  // Create new profiles div
+  profileDiv = document.createElement('div');
+  profileDiv.className = 'profiles';
+  profileDiv.innerHTML = `
+    <div class="profile-card">
+      <h3>${boyInfo.नाम || 'लड़का'}</h3>
+      <div class="profile-field"><strong>राशि:</strong> ${boyInfo.राशि || '-'}</div>
+      <div class="profile-field"><strong>नक्षत्र:</strong> ${boyInfo.नक्षत्र || '-'}</div>
+      <div class="profile-field"><strong>गण:</strong> ${boyInfo.गण || '-'}</div>
+      <div class="profile-field"><strong>योनि:</strong> ${boyInfo.योनि || '-'}</div>
+      <div class="profile-field"><strong>नाड़ी:</strong> ${boyInfo.नाड़ी || '-'}</div>
+      <div class="profile-field"><strong>पद:</strong> ${boyInfo.पद || '-'}</div>
+      <div class="profile-field"><strong>राशि स्वामी:</strong> ${boyInfo.राशि_स्वामी || '-'}</div>
+    </div>
+    <div class="profile-card">
+      <h3>${girlInfo.नाम || 'लड़की'}</h3>
+      <div class="profile-field"><strong>राशि:</strong> ${girlInfo.राशि || '-'}</div>
+      <div class="profile-field"><strong>नक्षत्र:</strong> ${girlInfo.नक्षत्र || '-'}</div>
+      <div class="profile-field"><strong>गण:</strong> ${girlInfo.गण || '-'}</div>
+      <div class="profile-field"><strong>योनि:</strong> ${girlInfo.योनि || '-'}</div>
+      <div class="profile-field"><strong>नाड़ी:</strong> ${girlInfo.नाड़ी || '-'}</div>
+      <div class="profile-field"><strong>पद:</strong> ${girlInfo.पद || '-'}</div>
+      <div class="profile-field"><strong>राशि स्वामी:</strong> ${girlInfo.राशि_स्वामी || '-'}</div>
+    </div>
+  `;
+  
+  // Insert profile before the table
+  document.getElementById('kootTable').parentNode.insertBefore(profileDiv, document.getElementById('kootTable'));
+
+  const guna = data.guna || data.ashtakoot || {};
+  for (const [k,v] of Object.entries(guna)){
     const tr = document.createElement('tr');
     const a = document.createElement('td'); a.textContent = k;
     const b = document.createElement('td'); b.textContent = v;

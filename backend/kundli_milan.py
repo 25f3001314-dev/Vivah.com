@@ -463,11 +463,11 @@ def naam_se_kundli_milan(naam1: str, naam2: str, boy_birth: dict | None = None, 
     if total >= 32:
         result = "उत्तम (बहुत अच्छा) — विवाह शुभ है 🟢"
     elif total >= 24:
-        result = "मध्यम (अच्छा) — विवाह हो सकता है ✅"
+        result = "मध्यम (अच्छा) — विवाह हो सकता है "
     elif total >= 18:
         result = "साधारण (औसत) — सोच समझ कर फैसला करें 🟡"
     else:
-        result = "अधिक दोष (कमजोर) — विवाह अनुकूल नहीं 🔴"
+        result = "अधिक दोष (कमजोर) — विवाह अनुकूल नहीं "
 
     doshas = []
     if nadi == 0:
@@ -495,7 +495,7 @@ def naam_se_kundli_milan(naam1: str, naam2: str, boy_birth: dict | None = None, 
         "ashtakoot": ashtakoot_hi,
         "total_gunas": f"{total} / 36",
         "result": result,
-        "doshas": doshas if doshas else ["कोई बड़ा दोष नहीं मिला ✅"],
+        "doshas": doshas if doshas else ["कोई बड़ा दोष नहीं मिला "],
     }
 
 if __name__ == "__main__":
@@ -505,13 +505,13 @@ if __name__ == "__main__":
     print("=" * 55)
 
     result = naam_se_kundli_milan("राहुल", "प्रिया")
-    print("\n📌 Example 1: राहुल + प्रिया")
+    print("\n Example 1: राहुल + प्रिया")
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
     result2 = naam_se_kundli_milan("गौरव", "सोनिया")
-    print("\n📌 Example 2: गौरव + सोनिया")
+    print("\n Example 2: गौरव + सोनिया")
     print(json.dumps(result2, ensure_ascii=False, indent=2))
 
-    print("\n📌 Sirf Rashi nikalna:")
+    print("\n Sirf Rashi nikalna:")
     r = get_rashi_from_naam("दीपक")
     print(json.dumps(r, ensure_ascii=False, indent=2))

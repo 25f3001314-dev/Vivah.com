@@ -18,6 +18,11 @@ input{width:100%;padding:12px 10px;border-radius:8px;border:1px solid #e6eeee;fo
 #kootTable th,#kootTable td{padding:10px 12px;text-align:left;border-bottom:1px solid #eef7f7}
 .doshas{margin-top:10px;color:#b45309;background:#fff7ed;padding:10px;border-radius:8px;font-size:13px}
 #outcome{font-weight:700}
+.profiles{display:grid;gap:12px;margin-top:12px;grid-template-columns:1fr 1fr}
+.profile-card{background:#f7fdfd;padding:12px;border-radius:10px;border:1px solid #e0f0f0}
+.profile-card h3{margin:0 0 8px;font-size:14px;color:#0a5a5f;font-weight:700}
+.profile-field{font-size:12px;margin:6px 0;color:#066b70}
+.profile-field strong{color:#086b6f;font-weight:600}
 
 @media (min-width:420px){.advanced-grid{grid-template-columns:1fr 1fr}}
-@media (max-width:420px){.card{margin:10px;padding:16px;border-radius:12px}}
+@media (max-width:420px){.card{margin:10px;padding:16px;border-radius:12px}.profiles{grid-template-columns:1fr}}
